@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat May  2 14:49:56 2020
+
+@author: TakahiroKurokawa
+"""
+class Shape:
+    def __init__(self):
+        pass
+    def what_am_i(self):
+        return "I am a shape"
+
+class Square(Shape):
+    square_list=[]
+    def __init__(self,l):
+        self.name="Square"
+        self.l=l
+        self.square_list.append(self)
+    def calculate_perimeter(self):
+        return self.l*4
+    def __repr__(self):
+        return self.name
+    def change_size(self,x):
+        if self.l+x<0:
+            print("Alert:lenght minus value")
+        else:
+            self.l=self.l+x
+    def __repr__(self):
+        return "{} by {} by {} by {}".format(self.l,self.l,self.l,self.l)
+
+Squ1=Square(1)
+print(Squ1)
+
+def get_two_para(p1,p2):
+    if p1 is p2:
+        return True
+    else:
+        return False
+
+Squ1=Square(10)
+Squ2=Square(5)
+a=get_two_para(Squ1,Squ2)
+    
+
+
+
+
+
+

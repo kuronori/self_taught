@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri May  1 12:51:47 2020
+
+@author: TakahiroKurokawa
+"""
+
+maybe_movie=["ウォーキング・デッド","アントラージュ","ザ・ソプラノズ","ヴァンパイア・ダイアリーズ"]
+for movie in maybe_movie:
+    print(movie)
+
+for i in range(25,51):
+    print(i)
+
+for i,movie in enumerate(maybe_movie):
+    print(i)
+    print(movie)
+
+
+while True:
+    print("If the number you input exists in my list,I say 正解")
+    print("Please input q if you wanna quit")
+    inputted=input("input somthing:")
+    my_list=[0,1,2,3,4,5,100]
+    if inputted=="q":
+        break
+    else:
+        try:
+            inputted=int(inputted)
+        except:
+            print("数字を入力するか、qで終了します")
+            continue
+    if inputted in my_list:
+        print("正解")
+    elif inputted not in my_list:
+        print("不正解")  
+
+list_1=[8,19,148,4]
+list_2=[9,1,33,83]
+
+result=[]
+for i in list_1:
+    for j in list_2:
+        result=result+[i*j]

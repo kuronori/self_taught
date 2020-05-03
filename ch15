@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat May  2 18:28:49 2020
+
+@author: TakahiroKurokawa
+"""
+
+class Card:
+    value=[None,None,2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"]
+    suits=["Spade","Club","Diamond","Heart"]
+    
+    def __init__(self,value,suit):
+        self.v=value
+        self.s=suit
+    
+    def __repr__(self):
+        return "{0} of {1}".format(self.value[self.v],self.suits[self.s])
+    
+    def __lt__(self,c2):
+        if self.v<c2.v:
+            return True
+        elif self.v==c2.v:
+            if self.s<c2.s:
+                return True
+            else:
+                return False
+        else:
+            return False
+    
+    def __gt__(self,c2):
+        if self.v>c2.v:
+            return True
+        elif self.v==c2.v:
+            if self.s>c2.s:
+                return True
+            else:
+                return False
+        else:
+            return False
+
+
+import random 
+
+class Deck:
+    def __init__(self):
+        self.cards=[]
+        for i in range(2,15):
+            for j in range(4):
+                self.cards=self.cards+[Card(i,j)]
+        #self.cards=random.shufle(self.cards)は何故ダメか
+        random.shuffle(self.cards)
+
+
+class Player:
+    def __init__(self,name):
+        self.name=name
+        self.wins=0
+        self.card=None
+
+class Game:
+    def __init__(self):
+        name1=input("プレイヤー１の名前を入力して下さい:")
+        name2=input("プレイヤー2の名前を入力して下さい:")
+        self.p1=Player(name1)
+        self.p2=Player(name2)
+        self.deck=Deck()
+        
+    def play_game(self):
+        while len(self.deck.cards)>=2:
+            response=input("Input Response [to quit input q]:")
+            if response=="q":
+                break
+            self.p1.card=self.deck.cards.pop()
+            print("{0} gets {1}".format(self.p1.name,self.p1.card))
+            self.p2.card=self.deck.cards.pop()
+            print("{0} gets {1}".format(self.p2.name,self.p2.card))
+            if self.p1.card<self.p2.card:
+                self.p2.wins+=1
+                print("Winner:{0},Loser:{1}".format(self.p2.name,self.p1.name))
+            if self.p1.card>self.p2.card:
+                self.p1.wins+=1
+                print("Winner:{0},Loser:{1}".format(self.p1.name,self.p2.name))
+        print("____________________")
+        print("Game is over!!")
+        print("____________________")
+        if self.p1.wins>self.p2.wins:
+            print("{0} is winner".format(self.p1.name))
+        elif self.p1.wins==self.p2.wins:
+            print("Drow")
+        else:
+            print("{0} is winner".format(self.p2.name))
+
+game1=Game().play_game()
+
+            
+        
+            
+
+    
+    
+        

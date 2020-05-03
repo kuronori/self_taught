@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat May  2 13:53:30 2020
+
+@author: TakahiroKurokawa
+"""
+class Shape:
+    def __init__(self):
+        pass
+    def what_am_i(self):
+        return "I am a shape"
+
+class Rectangle(Shape):
+    def __init__(self,length,height):
+        self.name="Rectangle"
+        self.l=length
+        self.h=height
+    def calculate_perimeter(self):
+        return (self.l+self.h)*2
+    def __repr__(self):
+        return self.name
+
+class Square(Shape):
+    def __init__(self,length,height):
+        self.name="Square"
+        self.l=length
+        self.h=height
+    def calculate_perimeter(self):
+        return (self.l+self.h)*2
+    def __repr__(self):
+        return self.name
+    def change_size(self,x):
+        if self.l+x<0:
+            print("Alert:lenght minus value")
+        else:
+            self.l=self.l+x
+
+Rec=Rectangle(10,5)
+Squ=Square(3,6)
+lists=[Rec,Squ]
+
+for i in lists:
+    print("{0}の外周は{1}".format(i,i.calculate_perimeter()))
+
+print(Squ.l)
+Squ.change_size(-5)
+print(Squ.l)
+
+Rec2=Rectangle(10,2)
+Squ2=Square(1,2)
+print(Rec2.what_am_i())
+print(Squ2.what_am_i())
+
+class Rider:
+   def __init__(self,name):
+       self.name=name
+class Horse:
+    def __init__(self,Rider):
+        self.Rider=Rider
+    
+Rider=Rider("Noriaki")
+Horse=Horse(Rider)
+print(Horse.Rider.name)
+
+
+

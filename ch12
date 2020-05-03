@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat May  2 13:36:30 2020
+
+@author: TakahiroKurokawa
+"""
+
+class Apple:
+    def __init__(self,color,weight,shape,category):
+        self.c=color
+        self.w=weight
+        self.s=shape
+        self.cat=category
+
+Apple=Apple("Red",100,"circle","fruit")
+print(Apple.c)
+print(Apple.w)
+print(Apple.s)
+print(Apple.cat)  
+
+from math import pi
+class Circle:
+    def __init__(self,radius):
+        self.r=radius
+    def area(self):
+        return pi*(self.r)**2
+circle=Circle(10)
+print(circle.area())
+
+class Triangle:
+    def __init__(self,Teihenn,Height):
+        self.t=Teihenn
+        self.h=Height
+    def area(self):
+        return self.t*self.h/2
+Triangle=Triangle(4,5)
+print(Triangle.area())
+
+class Hexagon:
+    def __init__(self,len1,len2,len3,len4,len5,len6):
+        self.l1=len1
+        self.l2=len2
+        self.l3=len3
+        self.l4=len4
+        self.l5=len5
+        self.l6=len6
+    def calculate_perimater(self):
+        return self.l1+self.l2+self.l3+self.l4+self.l5+self.l6
+
+Hexagon=Hexagon(1,2,2,3,4,4)
+print(Hexagon.calculate_perimater())

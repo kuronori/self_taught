@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri May  1 12:29:47 2020
+
+@author: TakahiroKurokawa
+"""
+
+string="カミュ"
+for i in string:
+    print(i)
+    
+string_1=input("input string:")
+string_2=input("input another string:")
+print("私は昨日{0}を書いて、{1}に送った".format(string_1,string_2))
+
+string_3="aldous Huxley was born in 1894"
+string_3=string_3.capitalize()
+
+string_4="どこで？　誰が？　いつ？"
+string_to_list=string_4.split("　")
+word_list=["The","fox","jumped","over","the","fence","."]
+sentence=" ".join(word_list)
+sentence=sentence.replace(" .",".")
+
+sentence="A screaming comes aross the sky."
+sentence=sentence.replace("s","$")
+
+person="Hemingway"
+index_m=person.find("m")
+
+my_favrite_serifu="神は言った。'まだ死ぬときではないと'"
+threes="three"+" three"+" three"
+threes2="three "*3
+
+sentence="四月の晴れた寒い日で、時計がどれも十三時を打っていた"
+index_tenn=sentence.find("、")
+sliced_sentence=sentence[:index_tenn+1]

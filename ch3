@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri May  1 10:20:33 2020
+
+@author: TakahiroKurokawa
+"""
+
+print("Hello world")
+print("What's up?")
+print("My name is Noriaki")
+
+
+a=input("Input number:")
+print(a)
+a=int(a)
+if a<10:
+    print("Hello")
+else:
+    print("Hello Hello")
+
+b=input("Input number:")
+b=int(b)
+print(b)
+
+if b<=10:
+    print("Hello")
+elif 10<b<=25:
+    print("Hello Hello")
+else:
+    print("Hello Hello Hello")    
+
+a=5
+b=3
+print(a%b)
+print(a/b)
+
+age=input("Input age:")
+age=int(age)
+
+if age<10:
+    print("You are young")
+elif 10<=age<20:
+    print("You are teen")
+else:
+    print("You are adult")
